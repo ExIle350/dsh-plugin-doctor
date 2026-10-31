@@ -1,0 +1,9 @@
+# dsh-plugin-doctor — bundle patch
+#
+# 只插一行，且**不带任何 disabled 守卫**。
+# 教训来自 dsh-better-sidebar：它这行带一个 `disabled: !!js` 去重守卫，
+# 而独立安装时 bundle 自身的条目恰好满足守卫条件（id === 包名），于是把自己
+# 禁用掉 —— 表现是「装了、没报错、什么都没发生」，宿主还不写日志。
+- insert:
+    - id: dsh-plugin-doctor
+      name: dsh-plugin-doctor

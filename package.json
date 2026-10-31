@@ -1,0 +1,56 @@
+{
+  "name": "dsh-plugin-doctor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "lib/index.js",
+  "description": "插件体检面板 / Plugin health panel for DeepSeek Harness — 列出每个插件是否真激活、路由通不通、缺哪个文件或 peer。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "diagnostics",
+    "plugin-health"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    },
+    "compatibility": {
+      "dsh": ">=0.2.1-rc.1",
+      "dshReleases": {
+        "0.2.1-rc.5": "verified"
+      }
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExIle350/dsh-plugin-doctor.git"
+  },
+  "homepage": "https://github.com/ExIle350/dsh-plugin-doctor#readme",
+  "bugs": {
+    "url": "https://github.com/ExIle350/dsh-plugin-doctor/issues"
+  },
+  "author": "ExIle350"
+}
